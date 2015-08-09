@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Namerecipe:
+  = @recipe.namerecipe
+%p
+  %b Author:
+  = @recipe.author
+%p
+  %b Category:
+  = @recipe.category
+%p
+  %b Ingredients:
+  = @recipe.ingredients
+
+= link_to 'Edit', edit_recipe_path(@recipe)
+\|
+= link_to 'Back', recipes_path
