@@ -34,6 +34,11 @@ gem 'light_operations'
 gem 'devise'
 gem 'html2haml'
 
+#Installing Bootstrap and the Less stylesheets.
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+
 # Deployment / Server gems
 
 # gem 'unicorn'

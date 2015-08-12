@@ -1,22 +1,23 @@
-= form_for @recipe do |f|
-  - if @recipe.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@recipe.errors.count, "error")} prohibited this recipe from being saved:"
-      %ul
-        - @recipe.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :namerecipe
-    = f.text_field :namerecipe
-  .field
-    = f.label :author
-    = f.text_field :author
-  .field
-    = f.label :category
-    = f.text_field :category
-  .field
-    = f.label :ingredients
-    = f.text_area :ingredients
-  .actions
-    = f.submit 'Save'
+= form_for @recipe, html: { class: "form form-horizontal recipe" } do |f|
+  .form-group
+    = f.label :namerecipe, class: 'control-label'
+    .controls
+      = f.text_field :namerecipe, class: 'form-control', required: true
+    = error_span(@recipe[:namerecipe])
+  .form-group
+    = f.label :author, class: 'control-label'
+    .controls
+      = f.text_field :author, class: 'form-control', required: true
+    = error_span(@recipe[:author])
+  .form-group
+    = f.label :category, class: 'control-label'
+    .controls
+      = f.text_field :category, class: 'form-control', required: true
+    = error_span(@recipe[:category])
+  .form-group
+    = f.label :ingredients, class: 'control-label'
+    .controls
+      = f.text_field :ingredients, class: 'form-control', required: true
+    = error_span(@recipe[:ingredients])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), recipes_path, :class => 'btn btn-default'
