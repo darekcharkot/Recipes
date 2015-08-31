@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe "recipes/show", type: :view do
+RSpec.describe 'recipes/show', type: :view do
   before(:each) do
     @recipe = assign(:recipe, Recipe.create!(
-      :namerecipe => "Namerecipe",
-      :author => "Author",
-      :category => "Category",
-      :ingredients => "MyText"
+                                namerecipe: 'Namerecipe',
+                                author: 'Author',
+                                category: 'Category',
+                                ingredients: 'MyText'
     ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Namerecipe/)
     expect(rendered).to match(/Author/)
