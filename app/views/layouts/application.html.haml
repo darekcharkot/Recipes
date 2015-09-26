@@ -32,7 +32,10 @@
             %li= link_to "Przepisy", recipes_path(@recipe)
             %li= link_to "Ciekawostki", "/path3"
             %li= link_to "Kontakt", "/path4"
-            %li= link_to "Zarejestruj się", new_user_registration_path()
+            - if current_user
+              %li= link_to "Wyloguj się", destroy_user_session_path, method: :delete
+            - else
+              %li= link_to "Zarejestruj się", new_user_registration_path
 
     .container
       .row

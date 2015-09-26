@@ -1,0 +1,10 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 160
