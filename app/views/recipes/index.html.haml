@@ -9,6 +9,7 @@
       %th= model_class.human_attribute_name(:author)
       %th= model_class.human_attribute_name(:category)
       %th= model_class.human_attribute_name(:ingredients)
+      %th= model_class.human_attribute_name(:makerecipe)
       %th= model_class.human_attribute_name(:created_at)
       - if current_user
         %th=t '.actions', :default => t("helpers.actions")
@@ -20,6 +21,7 @@
         %td= recipe.author
         %td= recipe.category
         %td= recipe.ingredients
+        %td= recipe.makerecipe
         %td= recipe.created_at
         - if current_user
           %td

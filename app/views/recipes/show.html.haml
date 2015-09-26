@@ -17,7 +17,10 @@
 %p
   %strong= model_class.human_attribute_name(:ingredients) + ':'
   %br
-  = @recipe.ingredients
+%p
+  %strong= model_class.human_attribute_name(:makerecipe) + ':'
+  %br
+  = @recipe.makerecipe
 
 
 = link_to t('.back', :default => t("helpers.links.back")), recipes_path, :class => 'btn btn-default'

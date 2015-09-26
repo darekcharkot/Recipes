@@ -19,5 +19,10 @@
     .controls
       = f.text_field :ingredients, class: 'form-control', required: true
     = error_span(@recipe[:ingredients])
+  .form-group
+    = f.label :makerecipe, class: 'control-label'
+    .controls
+      = f.text_field :makerecipe, class: 'form-control', required: true
+    = error_span(@recipe[:makerecipe])
   = f.submit nil,class: 'btn btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), recipes_path, :class => 'btn btn-default'
