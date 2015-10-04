@@ -7,6 +7,7 @@ RSpec.describe 'recipes/edit', type: :view do
                                 author: 'MyString',
                                 category: 'MyString',
                                 ingredients: 'MyText'
+                                makerecipe: 'MyText'
     ))
   end
 
@@ -21,6 +22,8 @@ RSpec.describe 'recipes/edit', type: :view do
       assert_select 'input#recipe_category[name=?]', 'recipe[category]'
 
       assert_select 'textarea#recipe_ingredients[name=?]', 'recipe[ingredients]'
+
+      assert_select 'textarea#recipe_makerecipe[name=?]', 'recipe[makerecipe]'
     end
   end
 end

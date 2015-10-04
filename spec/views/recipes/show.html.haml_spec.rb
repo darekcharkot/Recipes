@@ -6,7 +6,8 @@ RSpec.describe 'recipes/show', type: :view do
                                 namerecipe: 'Namerecipe',
                                 author: 'Author',
                                 category: 'Category',
-                                ingredients: 'MyText'
+                                ingredients: 'Ingredients'
+                                makerecipe: 'Makerecipe'
     ))
   end
 
@@ -15,6 +16,7 @@ RSpec.describe 'recipes/show', type: :view do
     expect(rendered).to match(/Namerecipe/)
     expect(rendered).to match(/Author/)
     expect(rendered).to match(/Category/)
-    expect(rendered).to match(/MyText/)
+    expect(rendered).to match(/Ingredients/)
+    expect(rendered).to match(/Makerecipe/)
   end
 end
