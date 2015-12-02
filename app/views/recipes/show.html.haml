@@ -21,7 +21,12 @@
   %strong= model_class.human_attribute_name(:makerecipe) + ':'
   %br
   = @recipe.makerecipe
-
+%p
+  -if @comments.empty?
+    Brak komentarza
+  -else
+    - @comments.each do |comment|
+      = render(partial: "comment", locals:{comment: comment})
 
 = link_to t('.back', :default => t("helpers.links.back")), recipes_path, :class => 'btn btn-default'
 = link_to t('.edit', :default => t("helpers.links.edit")), edit_recipe_path(@recipe), :class => 'btn btn-default'

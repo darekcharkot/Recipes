@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @comments = Comment.where(recipe_id: params[:id])
   end
 
   def new
