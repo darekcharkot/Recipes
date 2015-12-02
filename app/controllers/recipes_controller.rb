@@ -21,7 +21,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
-      redirect_to @recipe, notice: 'Przepis został pomyslnie utworzony.'
+      redirect_to @recipe, notice: 'Przepis został pomyślnie utworzony.'
     else
       render :new
     end
