@@ -18,10 +18,19 @@
     %strong= 'Sposób wykonania' + ':'
     = recipe.makerecipe
     %br
-    - if current_user
-      = link_to t('.edit', :default => t("helpers.links.edit")), edit_recipe_path(recipe), :class => 'btn btn-default btn-xs'
-      = link_to t('.destroy', :default => t("helpers.links.destroy")), recipe_path(recipe), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
-- if current_user
-  = link_to t('.new', :default => t("helpers.links.new")), new_recipe_path, :class => 'btn btn-primary'
+    %br
+      - if current_user
+        = link_to t('.edit', :default => t("helpers.links.edit")), edit_recipe_path(recipe), :class => 'btn btn-default btn-xs'
+        = link_to t('.destroy', :default => t("helpers.links.destroy")), recipe_path(recipe), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+        = link_to 'Dodaj komentarz', new_comment_path, :class => 'btn btn-primary btn-xs'
 
-
+    %h4 Komentarze
+    -if @comments.empty?
+      Brak komentarza
+    -else
+      - @comments.each do |comment|
+        = render(partial: "comment", locals:{comment: comment})
+    %br
+    %hr{ :style => "border-width: 2px; width: 80%; align: left; border-color: orange;" }
+  - if current_user
+    = link_to t('.new', :default => t("helpers.links.new")), new_recipe_path, :class => 'btn btn-primary'

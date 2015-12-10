@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
+    @comments = Comment.all
   end
 
   def show
