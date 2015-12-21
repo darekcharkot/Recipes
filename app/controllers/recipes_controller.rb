@@ -3,8 +3,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @recipes = Recipe.all
-    @comments = Comment.all
+    @recipes = Recipe.includes(:comments).all
   end
 
   def show
