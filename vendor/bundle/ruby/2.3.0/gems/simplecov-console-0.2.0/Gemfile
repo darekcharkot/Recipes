@@ -1,0 +1,12 @@
+source "http://rubygems.org"
+
+gem "simplecov"
+gem "hirb"
+gem "colorize"
+
+group :development do
+  gem "minitest"
+  gem "yard"
+  gem "bundler", "~> 1.2"
+  gem 'jeweler', :git => "https://github.com/chetan/jeweler.git", :branch => "bixby"
+end

@@ -28,15 +28,16 @@ gem 'font-awesome-sass'
 gem 'bootstrap-sass'
 
 # Backend gems
-gem 'pg'
+gem 'pg', '~> 0.18.4'
 gem 'method_struct'
 gem 'light_operations'
 gem 'devise'
 gem 'html2haml'
+gem 'omniauth-github'
 
 # Installing Bootstrap and the Less stylesheets.
 gem 'therubyracer'
-gem 'less-rails' # Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'less-rails', github: 'metaskills/less-rails' # Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'twitter-bootstrap-rails'
 
 # Deployment / Server gems

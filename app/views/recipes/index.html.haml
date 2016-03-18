@@ -9,15 +9,16 @@
     %br
     %strong= 'Kategoria' + ':'
     = recipe.category
-    %br
     %strong= '| '+'Dodany' + ':'
     = recipe.created_at
+    %br
     %br
     %strong= 'Składniki' + ':'
     = recipe.ingredients
     %br
+    %br
     %strong= 'Sposób wykonania' + ':'
-    = recipe.makerecipe
+    %div{:class => "make_recipe"}= recipe.makerecipe
     %br
     %br
       - if current_user

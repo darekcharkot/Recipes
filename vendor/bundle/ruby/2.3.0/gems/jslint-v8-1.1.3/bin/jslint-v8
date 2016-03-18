@@ -1,0 +1,53 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.expand_path("../lib", File.dirname(__FILE__))
+
+require "jslint-v8"
+
+def print_usage
+   STDERR.puts JSLintV8::OptionParser.new.help
+   exit(255)
+end
+
+# if no parameters are passed then print usage and exit
+print_usage if ARGV.empty?
+
+# parse the options out of the command line
+begin
+   parser = JSLintV8::OptionParser.new
+   parser.parse!
+rescue SystemExit => e
+   # exit with a failing status code, happens with the -h and -v options
+   exit(255)
+rescue Exception => e
+   # print out an error message and exit with a failing exit code
+   STDERR.puts "#{$0}: #{e.message} (#{e.class.to_s})"
+   exit(255)
+end
+
+# if no parameters are left (nothing beyond options given) then print usage and exit
+print_usage if ARGV.empty?
+
+# set up a formatter for standard output
+if (!parser.options[:json])
+  formatter = JSLintV8::Formatter.new(STDOUT)
+else
+  formatter = JSLintV8::Json.new(STDOUT)
+end
+
+# set up a runner
+runner = JSLintV8::Runner.new(ARGV)
+runner.jslint_options.merge!(parser.options[:lint_options])
+
+# get a list of all failed files, printing . or * along the way depending on the result
+lint_result = runner.run do |file, errors|
+  formatter.tick(errors)
+end
+
+# put a separator line in between the ticks and any summary
+print "\n"
+
+# print a summary of failed files
+formatter.summary(ARGV, lint_result)
+
+# exit with the status code of the number of errors
+exit(lint_result.values.flatten.length)

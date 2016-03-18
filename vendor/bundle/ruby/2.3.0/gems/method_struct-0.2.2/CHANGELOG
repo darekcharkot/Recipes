@@ -1,0 +1,32 @@
+0.2.2
+~ A MethodStruct class now implements #to_proc and so can be passed as a block
+	argument
+
+0.2.1
+~ Fixes in how argument verification deals with hashes
+
+0.2.0
++ Allow user functions to overwrite the generated attr readers
++ Require_all option that checks if all arguments have been provided on
+  initialization
++ Require_presence option that checks if all arguments are non-nil on
+  initialization
++ Configurable defaults for the options
+
+0.1.5
++ Support blocks
+
+0.1.4
+~ Implement [] with a method instead of an alias to make mocks not care which
+	one is called
+
+0.1.3
++ Make it possible to call MethodStructs using [] like regular lambdas
+
+0.1.1
++ Implement #eql? in terms of #==
+
+0.1.0
+
+~ #== an #hash are now overloaded in MethodStructs so that two MethodStructs
+  of the same class initialized with the same arguments are equal

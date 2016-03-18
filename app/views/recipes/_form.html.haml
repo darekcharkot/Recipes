@@ -3,26 +3,26 @@
     = f.label :namerecipe, class: 'control-label'
     .controls
       = f.text_field :namerecipe, class: 'form-control', required: true
-    = error_span(@recipe[:namerecipe])
+    / = error_span(@recipe[:namerecipe])
   .form-group
     = f.label :author, class: 'control-label'
     .controls
       = f.text_field :author, class: 'form-control', required: true
-    = error_span(@recipe[:author])
+    / = error_span(@recipe[:author])
   .form-group
     = f.label :category, class: 'control-label'
     .controls
       = f.text_field :category, class: 'form-control', required: true
-    = error_span(@recipe[:category])
+    / = error_span(@recipe[:category])
   .form-group
     = f.label :ingredients, class: 'control-label'
     .controls
       = f.text_field :ingredients, class: 'form-control', required: true
-    = error_span(@recipe[:ingredients])
+    / = error_span(@recipe[:ingredients])
   .form-group
     = f.label :makerecipe, class: 'control-label'
     .controls
       = f.text_field :makerecipe, class: 'form-control', required: true
-    = error_span(@recipe[:makerecipe])
+    / = error_span(@recipe[:makerecipe])
   = f.submit nil,class: 'btn btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), recipes_path, :class => 'btn btn-default'

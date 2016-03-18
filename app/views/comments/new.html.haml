@@ -3,11 +3,11 @@
     = f.label :name, class: 'control-label'
     .controls
       = f.text_field :name, class: 'form-control', required: true
-    = error_span(@comment[:name])
+    / = error_span(@comment[:name])
   .form-group
     = f.label :text, class: 'control-label'
     .controls
       = f.text_field :text, class: 'form-control', required: true
-    = error_span(@comment[:text])
+    / = error_span(@comment[:text])
   = f.submit nil,class: 'btn btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), recipes_path, :class => 'btn btn-default'

@@ -11,6 +11,7 @@
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
     = stylesheet_link_tag "application", :media => "all"
     = stylesheet_link_tag "style", :media => "all"
+    = stylesheet_link_tag "recipes", :media => "all"
     = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
     = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
     = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
@@ -28,7 +29,10 @@
         #subtitle Gotuj z pasją
       #wrapper
         #content
-          %a{:href => new_user_session_path} Zaloguj | Zarejestruj
+          - if current_user
+            %a{:href => destroy_user_session_path(@user_id)} Wyloguj
+          - else
+            %a{:href => new_user_session_path} Zaloguj | Zarejestruj
           #text
             = bootstrap_flash
             = yield
@@ -39,20 +43,20 @@
               %br/
               Telefon: (000) 000-0000
               %br/
-              Fax:   (000) 000-0000
               %p
                 E-mail:
                 %a{:href => "mailto:info@yourdomain.com"} info@yourdomain.com
             #footerright
-              © Copyright 2015
-              %a{:href => "#sitename"} Your Sitename
+              © Copyright
+              = Time.now.year
+              %a{:href => "http://www.google.pl"} Google
               %br/
               %a{:href => "http://validator.w3.org/check?uri=referer"} XHTML 1.0 Transitional
               %br/
               Sponsored by
               %a{:href => "http://www.opendesigns.org"} Open Designs
               %br/
-              Design by wfiedler
+              Design by Web#Darco
       #navleft1
         %h1 Categories
         %ul#nav

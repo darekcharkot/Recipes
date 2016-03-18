@@ -12,7 +12,7 @@ div#header {height:150px;background: #ff9900 url(images/header.jpg) no-repeat;}
 
 /*Navigation Styles*/
 
-div#navleft1 {float:left;width:200px;margin-top:10px;}
+div#navleft1 {float:left;width:150px;margin-top:10px;}
 
 div#navleft1 h1 {padding: 5px 0 0 25px;margin: 0;background: url(images/bg_navleft1.gif) no-repeat;color: #009933;height: 28px;font-size: 120%;letter-spacing: 4px;text-transform: uppercase;}
 
@@ -30,7 +30,7 @@ div#navleft1 h1 {padding: 5px 0 0 25px;margin: 0;background: url(images/bg_navle
 
 .box p {margin:0;padding:0 10px 3px;border:1px solid #006600;border-width:0 1px;background:#d9d9b3;}
 
-div#navleft2 {float:right;width:200px;}
+div#navleft2 {float:right;width:150px;}
 
 #navleft2 img {margin-left: 5px;}
 
@@ -56,7 +56,7 @@ a:hover {color: #eb9999;text-decoration: none;}
 
 /*Content Styles*/
 
-div#content{margin-left:400px;background: #fff url(images/bg_content.jpg) no-repeat 20px 0%;border-bottom: 1px solid #ff9900;}
+div#content{margin-left:250px;background: #fff url(images/bg_content.jpg) no-repeat 20px 0%;border-bottom: 1px solid #ff9900;}
 
 div#content h1,h2,h3 {font-family: georgia, times new roman, times, serif;padding: 14px 0 10px 40px;color: #ff9900;font-size: 24px;letter-spacing: 1px;}
 
@@ -71,3 +71,10 @@ div.hr hr {display: none;}
 .imgleft {float: left;margin: 5px 10px 0 0;}
 
 .imgright {float: right;margin: 5px 0 0 10px;}
+
+.make_recipe {
+	width: 600px;
+	border: 3px solid #CCCCFF;
+	border-radius: 15px;
+	padding: 5px;
+}

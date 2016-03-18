@@ -1,0 +1,19 @@
+current directory: /home/darco/Projects/Przepisy/vendor/bundle/ruby/2.3.0/gems/bcrypt-3.1.10/ext/mri
+/usr/share/rvm/rubies/ruby-2.3.0/bin/ruby -r ./siteconf20160226-8867-6rhtgz.rb extconf.rb
+creating Makefile
+
+current directory: /home/darco/Projects/Przepisy/vendor/bundle/ruby/2.3.0/gems/bcrypt-3.1.10/ext/mri
+make "DESTDIR=" clean
+
+current directory: /home/darco/Projects/Przepisy/vendor/bundle/ruby/2.3.0/gems/bcrypt-3.1.10/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+compiling crypt_blowfish.c
+compiling crypt.c
+linking shared-object bcrypt_ext.so
+
+current directory: /home/darco/Projects/Przepisy/vendor/bundle/ruby/2.3.0/gems/bcrypt-3.1.10/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20160226-8867-mumha9
