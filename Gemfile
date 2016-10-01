@@ -26,15 +26,15 @@ end
 gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'bootstrap-sass'
+gem 'html2haml'
 
 # Backend gems
 gem 'pg', '~> 0.18.4'
 gem 'method_struct'
 gem 'light_operations'
 gem 'devise'
-gem 'html2haml'
-
 gem 'omniauth-github'
+gem 'haml-lint', '~> 0.999.999'
 
 # Installing Bootstrap and the Less stylesheets.
 gem 'therubyracer'
@@ -97,7 +97,7 @@ gem 'rubocop', '~> 0.26',          require: false
 gem 'brakeman',                    require: false
 gem 'coffeelint', '~> 0.3',        require: false
 gem 'scss-lint', '~> 0.29',        require: false
-gem 'haml-lint', '~> 0.7',         require: false
+# gem 'haml-lint', '~> 0.7',         require: false
 gem 'jslint-v8', '~> 1.1',         require: false
 gem 'flay', '~> 2.5',              require: false
 gem 'simplecov', '~> 0.9',         require: false
