@@ -33,6 +33,7 @@ gem 'method_struct'
 gem 'light_operations'
 gem 'devise'
 gem 'html2haml'
+
 gem 'omniauth-github'
 
 # Installing Bootstrap and the Less stylesheets.
