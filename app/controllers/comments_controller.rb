@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    ap params
+    # ap params
 
     if @comment.save
       redirect_to recipe_comments_url(recipe_id: params[:recipe_id]), notice: 'Komentarz został pomyślnie utworzony.'
