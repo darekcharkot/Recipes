@@ -1,8 +1,11 @@
-// Place all the styles related to the Recipes controller here.
+/*// Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+*/
 .make_recipe {
-	width: 300px;
-	border: 3px solid #00ce00;
-	border-radius: 15px;
+  box-shadow: 10px 7px 8px #8f8f8f;
+  width: 600px;
+  border: 1px solid #8f8f8f;
+/*  border-radius: 15px;*/
+  padding: 17px;
 }
