@@ -18,7 +18,8 @@
     %br
     %br
     %strong= 'Sposób wykonania' + ':'
-    %div{:class => "make_recipe"}= recipe.makerecipe
+    %div{:class => "make_recipe"}
+      = recipe.makerecipe
     %br
     %br
       - if current_user
