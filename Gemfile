@@ -62,6 +62,7 @@ group :development do
   # Debuging gems
   gem 'binding_of_caller'
   gem 'better_errors'
+  gem 'guard'
   # gem 'meta_request'
 
   # Tests gems

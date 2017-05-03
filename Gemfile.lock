@@ -446,6 +446,7 @@ DEPENDENCIES
   dotenv-rails
   flay (~> 2.5)
   font-awesome-sass
+  guard
   guard-rspec
   guard-rubocop
   haml-lint (~> 0.999.999)

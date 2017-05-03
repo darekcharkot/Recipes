@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     # ap params
 
     if @comment.save
-      redirect_to recipe_comments_url(recipe_id: params[:recipe_id]), notice: 'Komentarz został pomyślnie utworzony.'
+      redirect_to recipe_comments_url(recipe_id: params[:recipe_id]), notice: 'Twój komentarz został dodany'
     else
       render :new
     end

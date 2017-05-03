@@ -1,13 +1,18 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  # before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @recipes = Recipe.includes(:comments).all
+    @recipe = Recipe.where(params[:id])
   end
 
   def show
     @comments = Comment.where(recipe_id: params[:id])
+    # @recipe = Recipe.find(params[:id])
+    if @recipe
+      redirect_to recipe_path(recipe_params)
+    end
   end
 
   def new
@@ -42,9 +47,9 @@ class RecipesController < ApplicationController
 
   private
 
-  def set_recipe
-    @recipe = Recipe.find(params[:id])
-  end
+  # def set_recipe
+  #   @recipe = Recipe.find(params[:id])
+  # end
 
   def recipe_params
     params.require(:recipe).permit(:namerecipe, :author, :category, :ingredients, :makerecipe)
